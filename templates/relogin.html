@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+
+{% block body %}
+        <div class="background">
+            <form actions="/" method="post">
+                <div style="max-width: 20rem; margin-top: 4rem;">
+                    <img class="img-fluid text-center" id="logo" src="../static/ub_logo.png" alt="error">
+                </div>
+                <div style="color: white; width: 20rem; font-family: Courier new; font-size: 95%;" class="mb-4 d-flex justify-content-center flex-column align-items-center">
+                <p>Turning moments into memories: Your premium event space awaits. Secure your space now!</p>
+                </div>
+                <div class="mb-3"><input autocomplete="off" autofocus name="email" class="form-control rounded-pill" placeholder="Email" type="text"></div>
+                <div class="mb-1" style="position: relative">
+                    <input autocomplete="off" autofocus name="password" class="form-control rounded-pill password" placeholder="Password" type="password">
+                    <span class="password-toggle-icon eye"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="mb-3 text-center" style="color: red; font-size: 80%; font-weight: bold;">INCORRECT USERNAME OR PASSWORD</div>
+                <div class="mb-3 text-center" id="forget_pw"><a href="forget.html">Forget Password</a></div>
+                <div class="mb-3"><button type="submit" class="btn btn-primary w-100 form-control rounded-pill">Sign In</button></div>
+                <div class="mb-3 text-center" id="register_prompt">New to Urban Boulevard? <a href="{{ url_for('register') }}" style="padding-left: 4%;">Register Now</a></div>
+        </form>
+        </div>
+{% endblock %}

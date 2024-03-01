@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+{% if error_message %}
+<script>
+  alert("{{ error_message }}");
+</script>
+{% endif %}
+
+<div class="background">
+  <div class="heading">
+    {{session["space"]}}
+  </div>
+  <form actions="/" method="post">
+    <div class="col-md-12">
+      <label for="inputEmail4" class="form-label"></label>
+      <input type="name" name="name" placeholder="Name" class="form-control" id="bkname">
+    </div>
+    <div class="col-md-12">
+      <label for="inputAddress" class="form-label"></label>
+      <input type="text" name="purpose" class="form-control" id="bkpurpose" placeholder="Purpose">
+    </div>
+    <div class="col-12">
+      <label for="inputdate" class="form-label"></label>
+      <input type="date" name="date" class="form-control" id="bkdate" placeholder="Date">
+    </div>
+    <div class="col-md-12">
+      <label for="inputtimestart" class="form-label"></label>
+      <input type="time" name="timestart" class="form-control" id="bktimestart" min="08:00" max="23:00">
+    </div>
+    <div class="col-md-12 mb-3">
+      <label for="inputtimeend" class="form-label"></label>
+      <input type="time" name="timeend" class="form-control" id="bktimeend" min="08:00" max="23:00">
+    </div>
+    <button type="submit" id="bookin" disabled class="btn btn-primary col-md-6">Confirm Booking</button>
+</div>
+</form>
+</div>
+{% endblock %}

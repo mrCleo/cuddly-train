@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+<div class="background">
+  <div class="heading">
+    {{session["space"]}}
+  </div>
+  <div>
+    <table class="table tableStyle">
+      <thead>
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">PURPOSE</th>
+          <th scope="col">DATE</th>
+          <th scope="col">TIME START</th>
+          <th scope="col">TIME END</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in results %}
+        <tr class="text-center">
+          <td>{{result["NAME"]}}</td>
+          <td>{{result["PURPOSE"]}}</td>
+          <td>{{result["DATE"]}}</td>
+          <td>{{result["TIMESTART"]}}</td>
+          <td>{{result["TIMEEND"]}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <form method="post">
+      <button type="submit" id="logoff" class="btn btn-primary w-100 form-control rounded-pill">Log Out</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
