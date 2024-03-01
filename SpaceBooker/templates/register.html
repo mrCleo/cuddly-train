@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block body %}
+        <div class="background">
+            <form actions="/register" method="post" id="popUp">
+                <div class="mb-3"><input autocomplete="off" autofocus id="name" name="name" class="form-control rounded-pill" placeholder="Full Name" type="text"></div>
+                <div class="mb-3"><input autocomplete="off" autofocus id="email" name="email" pattern = ".+@.+\.com" class="form-control rounded-pill" placeholder="Email" type="text"></div>
+                <div class="mb-3 text-center" id="invalid_email" style="color: red; font-size: 80%; font-weight: bold;">INVALID EMAIL!</div>
+                <div class="mb-3 text-center" id="invalid_pw" style="color: red; font-size: 80%; font-weight: bold;">WEAK PASSWORD!</div>
+                <div class="mb-3" style="position: relative">
+                <div class="mb-3" style="position: relative">
+                    <input autocomplete="off" autofocus name="password" class="form-control rounded-pill" id="first_pw" placeholder="Password" type="password">
+                    <span class="password-toggle-icon" id="first_eye"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="mb-3" style="position: relative">
+                    <input autocomplete="off" autofocus name="re_password" class="form-control rounded-pill" id="sec_pw" placeholder="Re-enter Password" type="password">
+                    <span class="password-toggle-icon" id="sec_eye"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="mb-3"><button type="submit" id="submit" disabled class="btn btn-primary w-100 form-control rounded-pill">Register</button></div>
+            </form>
+        </div>
+{% endblock %}

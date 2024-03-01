@@ -1,0 +1,4 @@
+Flask
+Gunicorn
+cs50
+Werkzeug==2.3.7
